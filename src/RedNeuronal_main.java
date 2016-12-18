@@ -49,7 +49,7 @@ public class RedNeuronal_main
         Neurona neurona = new Neurona(entradas,pesos,500);
         imprimirVector("pesos main ", pesos);
         for (int i = 0; i < 10000; i++) {
-            //System.err.println("Entrenamiento : "+neurona.Entrenamiento());
+            //System.out.println("Entrenamiento : "+neurona.Entrenamiento());
             neurona.Entrenamiento();
             //System.out.println("Verificar : "+neurona.verificar(entradas));
         }
