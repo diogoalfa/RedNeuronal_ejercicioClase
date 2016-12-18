@@ -8,7 +8,9 @@
  *
  * @author macbookpro
  */
-public class Neurona {
+public class Neurona
+{
+
     private double[] entradas;
     private double[] pesos;
     private double salida;
@@ -18,8 +20,6 @@ public class Neurona {
         this.pesos = pesos;
         this.salida = salida;
     }
-    
-    
 
     public double[] getEntradas() {
         return entradas;
@@ -45,7 +45,8 @@ public class Neurona {
         this.salida = salida;
     }
     
-    public void imprimirVector(String nombre,double[] vector){
+    public void imprimirVector(String nombre,double[] vector)
+    {
         System.out.println(nombre+" : ");
         for (int i = 0; i < vector.length; i++) {
              System.out.print("["+vector[i]+"]"); 
@@ -53,7 +54,8 @@ public class Neurona {
         System.out.println("");
     }
     
-    public double Entrenamiento(){
+    public double Entrenamiento()
+    {
          double y0=0;
          double y1=0;
          double y2=0;
@@ -96,13 +98,15 @@ public class Neurona {
         return y0;
     }
     
-    public double recalcularPeso(double peso,double salida,double entrada){
+    public double recalcularPeso(double peso,double salida,double entrada)
+    {
         
-        double nuevoPeso=peso+0.5*salida*entrada;
+        double nuevoPeso = peso+0.5*salida*entrada;
         return nuevoPeso;
     }
     
-    public double verificar(double[] entradas){
+    public double verificar(double[] entradas)
+    {
         double yi = 0;
 
         for (int i = 0; i <entradas.length; i++) {
