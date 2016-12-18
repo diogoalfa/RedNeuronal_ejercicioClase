@@ -9,7 +9,7 @@ import java.util.Random;
 
 /**
  *
- * @author macbookpro
+ * @author Diego Navia F. <diogo.again@icloud.com>
  */
 public class RedNeuronal_main {
 
@@ -42,28 +42,38 @@ public class RedNeuronal_main {
         
         entradas=llenarEntradas();
         pesos=llenarPesos();
-        
-        Neurona neurona=new Neurona(entradas,pesos,500);
-        imprimirVector("pesos main ", pesos);
-        
-        imprimirVector("entradas", entradas);
-        for (int i = 0; i < 1000; i++) {
-            System.err.println("Entrenamiento : "+neurona.Entrenamiento());
+        imprimirVector("Entradas 1",entradas);
+        /*  Entrenamiento 1*/
+        Neurona neurona = new Neurona(entradas,pesos,500);
+        //imprimirVector("pesos main ", pesos);
+        for (int i = 0; i < 10000; i++) {
+            //System.err.println("Entrenamiento : "+neurona.Entrenamiento());
+            neurona.Entrenamiento();
             //System.out.println("Verificar : "+neurona.verificar(entradas));
         }
-        
+        System.out.println("Salida - entrenamiento 1 : "+neurona.Entrenamiento());
+        /*  Entrenamiento 2 */
         double[] nuevaEntrada={1,1,1,1,1,1};
+        imprimirVector("Entrada 2",nuevaEntrada);
         neurona.setEntradas(nuevaEntrada);
-        System.err.println("Comparacion 1 : "+neurona.Entrenamiento());
-        
+        System.out.println("Salida - Entrenamiento 2 : "+neurona.Entrenamiento());
+
+        /*  Entrenamiento 3 */
         nuevaEntrada[0]=5;
         nuevaEntrada[0]=10;
         nuevaEntrada[0]=2;
         nuevaEntrada[0]=3;
         nuevaEntrada[0]=0;
         nuevaEntrada[0]=11;
+        imprimirVector("Entrada 3",nuevaEntrada);
         neurona.setEntradas(nuevaEntrada);
-        System.err.println("Comparacion 2 : "+neurona.Entrenamiento());
+        System.out.println("Salida - Entrenamiento 3 : "+neurona.Entrenamiento());
+
+        /* Comprobacion con la entrada 1 */
+        imprimirVector("Entrada 1",entradas);
+        neurona.setEntradas(entradas);
+        System.out.println("Salida - Entrenamiento 4 : "+neurona.Entrenamiento());
+
         //System.out.println("Entrenamiento : "+neurona.Entrenamiento());
         // TODO code application logic here
     }

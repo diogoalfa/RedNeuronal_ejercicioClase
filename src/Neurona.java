@@ -76,26 +76,23 @@ public class Neurona {
              y4=y0*y3;
              y0=y4;
             // System.out.println("y0 :"+y0);
-             if(y0>=0){
+             if (y0 >= 0) {
                  //y0=1;
-             }else{
+             } else {
                 //y0=-1;
              }
-             if(y0==salida){
+             if (y0 == salida) {
 
-             }else{
+             } else {
                  for (int j = 0; j < pesos.length; j++) {
                      pesos[j]=recalcularPeso(pesos[j],salida,entradas[j]);
                     
                  }
                  //imprimirVector("pesos ajustados ", pesos);
-                 
                  //i--;
              }
            // i++;
          //}
-
-
         return y0;
     }
     
@@ -105,11 +102,9 @@ public class Neurona {
         return nuevoPeso;
     }
     
-    
     public double verificar(double[] entradas){
         double yi = 0;
-        
-        
+
         for (int i = 0; i <entradas.length; i++) {
             yi=yi+pesos[i]*entradas[i];
         }
