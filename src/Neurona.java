@@ -6,7 +6,7 @@
 
 /**
  *
- * @author macbookpro
+ * @author Diego Navia F. <diogo.again@icloud.com>
  */
 public class Neurona
 {
